@@ -1,13 +1,11 @@
 document.getElementById("yes").addEventListener("click", function() {
-    alert("¡Sabía que dirías que sí! 💖");
-    document.getElementById("sticker").style.display = "block";
+    document.getElementById("reactionGif").style.display = "block"; // Muestra el nuevo GIF
 });
 
 document.getElementById("no").addEventListener("mouseover", function() {
-    let button = document.getElementById("no");
-    let randomX = Math.random() * window.innerWidth - 100;
-    let randomY = Math.random() * window.innerHeight - 50;
-    button.style.position = "absolute";
-    button.style.left = `${randomX}px`;
-    button.style.top = `${randomY}px`;
+    let buttonYes = document.getElementById("yes");
+    let currentSize = window.getComputedStyle(buttonYes).getPropertyValue("font-size");
+    let newSize = parseFloat(currentSize) + 5 + "px";
+    buttonYes.style.fontSize = newSize;
 });
+
